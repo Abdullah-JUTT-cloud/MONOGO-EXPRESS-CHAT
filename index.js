@@ -20,6 +20,16 @@ async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/WETOSH');
 }
 
+
+
+
+// async function main() {
+//   await mongoose.connect('mongodb://127.0.0.1:27017/WETOSH');
+//   await Chat.deleteMany({});
+//   console.log("All books deleted");
+// }
+
+
 app.get("/",(req,res)=>{
     res.send("root is working");
 });
