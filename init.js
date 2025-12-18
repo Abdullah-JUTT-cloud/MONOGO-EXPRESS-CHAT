@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 
 const Chat=require("./models/chat.js");
 
@@ -11,15 +12,46 @@ async function main() {
 }
 
 
-let chat1=new Chat({
-    from:"Abdullah",
-    to:"Fatima",
-    msg:"ILUVU!!!!",
-    created_at:new Date(),
-});
+let allChats = [
+  {
+    from: "Abdullah",
+    to: "Fatima",
+    msg: "Hey, hope you’re doing well.",
+    created_at: new Date(),
+  },
+  {
+    from: "Fatima",
+    to: "Abdullah",
+    msg: "I’m good, thanks! How about you?",
+    created_at: new Date(),
+  },
+  {
+    from: "Jutt",
+    to: "Kim",
+    msg: "Are you free to discuss the project later?",
+    created_at: new Date(),
+  },
+  {
+    from: "Kim",
+    to: "Jutt",
+    msg: "Yes, let’s connect in the evening.",
+    created_at: new Date(),
+  },
+   {
+    from: "ROHMA",
+    to: "Jutt",
+    msg: "HEYYYYY",
+    created_at: new Date(),
+  },
+   {
+    from: "JUTT",
+    to: "ROHMA",
+    msg: "HIIIII",
+    created_at: new Date(),
+  }
+];
 
-chat1.save().then((res)=>{
-    console.log(res);
-}).catch((err)=>{
-    console.log(err);
-});
+Chat.insertMany(allChats);
+
+
+
