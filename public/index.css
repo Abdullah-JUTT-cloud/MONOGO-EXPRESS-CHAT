@@ -11,7 +11,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #ff0000; /* Red heading */
+    color: #c3ff00; /* Red heading */
     font-size: 2em;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -20,7 +20,7 @@ h2 {
 
 .chat {
     background-color: #111111; /* Dark gray background for chats */
-    border: 2px solid #ff0000; /* Red border */
+    border: 2px solid #ffd900; /* Red border */
     border-radius: 8px;
     padding: 20px;
     margin: 20px auto;
@@ -49,7 +49,7 @@ h2 {
 }
 
 .chat p:first-child {
-    color: #ff0000; /* Red for "From" */
+    color: #ff00fb; /* Red for "From" */
     font-weight: bold;
 }
 

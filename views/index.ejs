@@ -12,12 +12,16 @@
     <div class="chat">
         <p>From: <%= chat.from %> </p>
         <div class="msg">
-             <p> <%= chat.msg %> </p>
+             <p> <i><%= chat.msg %> </i></p>
         </div>
 
           <p>Recieved By: <%= chat.to %> </p>
           <hr>
     </div>
+   
 <% } %>
+ <form action="/chats/new" method="get">
+        <button>ADD A NEW CHAT</button>
+    </form>
 </body>
 </html>
