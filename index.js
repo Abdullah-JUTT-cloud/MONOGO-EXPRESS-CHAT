@@ -8,6 +8,10 @@ const path=require("path");
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
 
+const Chat=require("./models/chat.js");
+
+
+
 main().then((res)=>{
     console.log("connection succes!");
 }).catch(err => console.log(err));
