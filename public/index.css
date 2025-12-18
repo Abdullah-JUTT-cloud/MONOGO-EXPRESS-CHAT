@@ -1,66 +1,105 @@
-/* Decent animated red and black theme for index.ejs */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
 
 body {
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text for readability */
-    line-height: 1.6;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  padding: 40px;
+  color: #eaeaea;
 }
 
 h2 {
-    text-align: center;
-    color: #c3ff00; /* Red heading */
-    font-size: 2em;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .chat {
-    background-color: #111111; /* Dark gray background for chats */
-    border: 2px solid #ffd900; /* Red border */
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 .chat:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.5);
-}
-
-.msg {
-    background-color: #222222; /* Slightly lighter gray for messages */
-    border-left: 4px solid #ff0000;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 4px;
-    color: #ff0000; /* Red for message text */
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .chat p {
-    margin: 8px 0;
-    color: #cccccc; /* Light gray for details */
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
 }
 
-.chat p:first-child {
-    color: #ff00fb; /* Red for "From" */
-    font-weight: bold;
+.msg {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  padding: 14px;
+  border-radius: 12px;
+  margin: 12px 0;
+  color: #fff;
+  transition: transform 0.3s ease;
 }
 
-.chat p:last-of-type {
-    color: #ff0000; /* Red for "Received By" */
-    font-weight: bold;
+.chat:hover .msg {
+  transform: scale(1.03);
+}
+
+.msg p {
+  font-style: italic;
+  font-size: 1rem;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background-color: #ff0000;
-    margin: 20px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-top: 15px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(221, 36, 118, 0.5);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
