@@ -11,16 +11,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     padding: 60px 20px;
     color: #eaeaea;
 }
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
     letter-spacing: 1px;
+}
+
+p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    text-align: center;
 }
 
 form {
@@ -35,6 +40,7 @@ form {
     max-width: 90%;
     animation: floatUp 0.6s ease forwards;
     opacity: 0;
+    margin-top: 20px;
 }
 
 @keyframes floatUp {
@@ -48,35 +54,25 @@ form {
     }
 }
 
-input[type="text"],
 textarea {
     width: 100%;
-    padding: 12px 14px;
-    margin-bottom: 20px;
-    border: none;
+    padding: 14px 16px;
     border-radius: 12px;
+    border: none;
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
     font-size: 1rem;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-input[type="text"]::placeholder,
-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-input[type="text"]:focus,
 textarea:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
     transform: translateY(-2px);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
 }
 
 button {
@@ -98,4 +94,15 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+        padding: 25px 20px;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
 }

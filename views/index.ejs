@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h2>All Chats</h2>
+    <h2>All Chats</h2><form action="/chats/new" method="get">
+        <button>ADD A NEW CHAT</button>
+    </form>
     <% for(let chat of chats){ %>
     <div class="chat">
         <p>From: <%= chat.from %> </p>
@@ -15,6 +17,9 @@
              <p> <i><%= chat.msg %> </i></p>
              <form action="/chats/<%= chat._id %>/edit">
                 <button>edit chat</button>
+             </form>
+             <form method="post" action="/chats/<%= chat._id %>?_method=DELETE">
+                <button>delete chat</button>
              </form>
         </div>
 
@@ -25,8 +30,6 @@
     </div>
    
 <% } %>
- <form action="/chats/new" method="get">
-        <button>ADD A NEW CHAT</button>
-    </form>
+ 
 </body>
 </html>
