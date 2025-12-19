@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+app.use(express.urlencoded({extended:true}));
 
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
@@ -38,7 +39,23 @@ app.get("/chats",async(req,res)=>{
 
 app.get("/chats/new",(req,res)=>{
     res.render("new.ejs");
-})
+});
+
+app.post("/chats",(req,res)=>{
+    let {from,to,msg}=req.body;
+    let newChat=new Chat({
+        from:from,
+        to:to,
+        msg:msg,
+        created_at:new Date(),
+    });
+   newChat.save().then((res)=>{
+    console.log("new chat saved succesfully to DB!!")
+   }).catch((err)=>{
+    console.log(err);
+   });
+    res.redirect("/chats");
+});
 
 app.get("/",(req,res)=>{
     res.send("root is working");
