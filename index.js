@@ -24,13 +24,6 @@ async function main() {
 
 
 
-
-// async function main() {
-//   await mongoose.connect('mongodb://127.0.0.1:27017/WETOSH');
-//   await Chat.deleteMany({});
-//   console.log("All books deleted");
-// }
-
 app.get("/chats",async(req,res)=>{
     let chats=await Chat.find();
     // console.log(chats);
